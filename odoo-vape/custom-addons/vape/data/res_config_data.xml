@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="base.main_company" model="res.company">
+            <field name="name">Tu Nguyen</field>
+        </record>
+        <record id="vape_config_settings" model="res.config.settings">
+            <field name="currency_id" ref="base.VND" />
+        </record>
+        <function name="execute" model="res.config.settings">
+            <value eval="[ref('vape_config_settings')]"/>
+        </function>
+    </data>
+
+</odoo>

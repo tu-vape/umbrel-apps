@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: odoo-vape_web_1
+      APP_PORT: 2024
+      PROXY_AUTH_ADD: "false"
+  web:
+    image: nguyentuan1005/odoo:latest
+    ports:
+      - '7069:8069'
+    depends_on:
+      - db
+    restart: on-failure
+    stop_grace_period: 1m
+    volumes:
+      - ${APP_DATA_DIR}/odoo.conf:/etc/odoo/odoo.conf
+      - ${APP_DATA_DIR}/data/web:/var/lib/odoo
+      - ${APP_DATA_DIR}/custom-addons:/mnt/extra-addons
+  db:
+    image: postgres:13
+    ports:
+      - '5432:5432'
+    restart: on-failure
+    stop_grace_period: 1m
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: odoo
+      POSTGRES_USER: odoo
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ${APP_DATA_DIR}/data/db:/var/lib/postgresql/data/pgdata

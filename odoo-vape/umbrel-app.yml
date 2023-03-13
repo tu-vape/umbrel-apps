@@ -1,0 +1,23 @@
+manifestVersion: 2
+id: odoo-mclass
+category: Explorers
+name: Odoo
+version: "16.0.0"
+tagline: erp, crm
+description: >-
+  Odoo is a suite of open source business apps that cover all your company needs: 
+  CRM, eCommerce, accounting, inventory, point of sale, project management, etc .
+releaseNotes: >-
+  Let try
+developer: www.odoo.com
+website: www.odoo.com
+repo: https://github.com/odoo/odoo
+support: https://github.com/odoo/odoo/issues
+port: 2023
+#gallery:
+#  - 1.jpg
+#  - 2.jpg
+#  - 3.jpg
+path: ""
+defaultUsername: ""
+defaultPassword: ""
