@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Mai Class",
+    'name': "Vape",
 
     'summary': """
         "Mai Class""",
 
     'description': """
-        "Mai Class
+        "Vape
     """,
 
     'author': "NTU",
@@ -19,11 +19,12 @@
 
     # "images": ["static/description/icon.png", ],
     # any module necessary for this one to work correctly
-    'depends': ['point_of_sale'],
+    'depends': ['point_of_sale', 'l10n_vn'],
 
     # always loaded
     'data': [
-        'data/res_config_data.xml'
+        'data/res_users_demo.xml',
+        'data/demo_company.xml'
     ],
 
     "application": True,
